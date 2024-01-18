@@ -11,8 +11,6 @@ struct queue{
 };
 struct queue *head = NULL;
 
-
-
 //Converts a given string to lowercase.
 void toLowercase(string& str) {
     transform(str.begin(), str.end(), str.begin(),
