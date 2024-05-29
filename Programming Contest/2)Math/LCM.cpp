@@ -1,21 +1,28 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
-
 using namespace std;
-int GCD(int a,int b){
-    if(a==0){
-        return b;
-    }
-    return GCD(b%a,a);
+
+// Function to find the GCD of two numbers
+int gcd(int a, int b) {
+    if (b == 0)
+        return a;
+    return gcd(b, a % b);
 }
-int LCM(int a,int b){
-    return (a*b)/GCD(a,b);
+
+// Function to find the LCM of two numbers
+int lcm(int a, int b) {
+    return (a * b) / gcd(a, b);
 }
 
 int main() {
-     int a,b;
-     cin>>a>>b;
-     cout<<LCM(a,b)<<endl;
-    return 0;   
+    int num1, num2;
+
+    cout << "Enter the first number: ";
+    cin >> num1;
+
+    cout << "Enter the second number: ";
+    cin >> num2;
+
+    cout << "The LCM of " << num1 << " and " << num2 << " is " << lcm(num1, num2) << endl;
+
+    return 0;
 }
